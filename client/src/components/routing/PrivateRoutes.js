@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PrivateRoute from '../routing/PrivateRoute';
 import Navbar from '../layout/Navbar';
 import Dashboard from '../pages/Dashboard';
+import About from '../pages/About';
 import Alert from '../layout/Alert';
 
 const PrivateRoutes = () => {
@@ -16,6 +17,7 @@ const PrivateRoutes = () => {
 				</div>
 				<Switch>
 					<PrivateRoute exact path='/dashboard' component={Dashboard} />
+					<PrivateRoute exact path='/about' component={About} />
 				</Switch>
 			</Fragment>
 		</Router>

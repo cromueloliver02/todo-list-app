@@ -6,6 +6,7 @@ import './App.css';
 import Landing from './components/pages/Landing';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
+import ConfirmLogoutModal from './components/layout/ConfirmLogoutModal';
 // import Alert from './components/layout/Alert';
 import PrivateRoutes from './components/routing/PrivateRoutes';
 import { loadUser } from './_actions/auth';
@@ -35,6 +36,7 @@ const App = () => {
 						<Route exact path='/register' component={Register} />
 						<PrivateRoute component={PrivateRoutes} />
 					</Switch>
+					<ConfirmLogoutModal />
 				</Fragment>
 			</Router>
 		</Provider>

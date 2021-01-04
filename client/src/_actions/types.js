@@ -2,6 +2,7 @@
 export const GET_TASKS = 'GET_TASKS';
 export const CREATE_TASK = 'CREATE_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
+export const CLEAR_TASKS = 'CLEAR_TASKS';
 export const TOGGLE_DONE_TASK = 'TOGGLE_DONE_TASK';
 export const SET_TASK_LOADING = 'SET_TASK_LOADING';
 export const TASK_ERROR = 'TASK_ERROR';
@@ -13,6 +14,7 @@ export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_ERROR = 'AUTH_ERROR';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const AUTH_FAIL = 'AUTH_FAIL';
+export const LOGOUT = 'LOGOUT';
 
 // alert
 export const SET_ALERT = 'SET_ALERT';

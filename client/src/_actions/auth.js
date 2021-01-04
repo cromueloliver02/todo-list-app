@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
+import { clearTasks } from './task';
 import setAuthToken from '../utils/setAuthToken';
 import {
 	USER_LOADED,
@@ -8,6 +9,7 @@ import {
 	AUTH_ERROR,
 	REGISTER_FAIL,
 	AUTH_FAIL,
+	LOGOUT,
 	SET_AUTH_LOADING
 } from './types';
 
@@ -89,4 +91,10 @@ export const login = ({ email, password }) => async dispatch => {
 
 		dispatch({ type: AUTH_FAIL });
 	}
+};
+
+export const logout = () => dispatch => {
+	dispatch({ type: LOGOUT });
+
+	dispatch(clearTasks());
 };

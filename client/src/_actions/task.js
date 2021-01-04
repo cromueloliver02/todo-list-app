@@ -4,6 +4,7 @@ import {
 	CREATE_TASK,
 	DELETE_TASK,
 	TOGGLE_DONE_TASK,
+	CLEAR_TASKS,
 	SET_TASK_LOADING,
 	TASK_ERROR
 } from './types';
@@ -20,6 +21,7 @@ export const getTasks = () => async dispatch => {
 		});
 	} catch (err) {
 		console.error(err.message);
+		console.log(err.response.data);
 		dispatch({
 			type: TASK_ERROR,
 			payload: { status: err.response.status, msg: err.response.statusText }
@@ -89,6 +91,10 @@ export const toggleDoneTask = taskId => async dispatch => {
 			payload: { status: err.response.status, msg: err.response.statusText }
 		});
 	}
+};
+
+export const clearTasks = () => dispatch => {
+	dispatch({ type: CLEAR_TASKS });
 };
 
 const setLoading = () => dispatch => {

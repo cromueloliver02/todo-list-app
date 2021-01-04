@@ -79,48 +79,48 @@ router.delete('/:task_id', auth, async (req, res) => {
 // @route      POST /api/tasks/:task_id
 // @desc       Update task
 // @access     Private
-router.post(
-	'/:task_id',
-	[auth, [body('text', 'Please enter your task').not().isEmpty()]],
-	async (req, res) => {
-		const errors = validationResult(req);
-		if (!errors.isEmpty()) {
-			return res.status(400).json({ errors: errors.array() });
-		}
+// router.post(
+// 	'/:task_id',
+// 	[auth, [body('text', 'Please enter your task').not().isEmpty()]],
+// 	async (req, res) => {
+// 		const errors = validationResult(req);
+// 		if (!errors.isEmpty()) {
+// 			return res.status(400).json({ errors: errors.array() });
+// 		}
 
-		try {
-			const task = await Task.findById(req.params.task_id);
-			if (!task) {
-				return res
-					.status(400)
-					.json({ errors: [{ msg: 'Task not found' }] });
-			}
+// 		try {
+// 			const task = await Task.findById(req.params.task_id);
+// 			if (!task) {
+// 				return res
+// 					.status(400)
+// 					.json({ errors: [{ msg: 'Task not found' }] });
+// 			}
 
-			if (task.user.toString() !== req.user.id) {
-				return res
-					.status(401)
-					.json({ errors: [{ msg: 'Not authorized' }] });
-			}
+// 			if (task.user.toString() !== req.user.id) {
+// 				return res
+// 					.status(401)
+// 					.json({ errors: [{ msg: 'Not authorized' }] });
+// 			}
 
-			const { text } = req.body;
+// 			const { text } = req.body;
 
-			task.text = text;
+// 			task.text = text;
 
-			await task.save();
+// 			await task.save();
 
-			res.send(task);
-		} catch (err) {
-			if (err.kind === 'ObjectId') {
-				return res
-					.status(400)
-					.json({ errors: [{ msg: 'Task not found' }] });
-			}
+// 			res.send(task);
+// 		} catch (err) {
+// 			if (err.kind === 'ObjectId') {
+// 				return res
+// 					.status(400)
+// 					.json({ errors: [{ msg: 'Task not found' }] });
+// 			}
 
-			console.error(err.message);
-			res.status(500).send('Server error');
-		}
-	}
-);
+// 			console.error(err.message);
+// 			res.status(500).send('Server error');
+// 		}
+// 	}
+// );
 
 // @route      PUT /api/tasks
 // @desc       Mark task as done

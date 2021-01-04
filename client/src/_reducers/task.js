@@ -3,6 +3,7 @@ import {
 	CREATE_TASK,
 	DELETE_TASK,
 	TOGGLE_DONE_TASK,
+	CLEAR_TASKS,
 	SET_TASK_LOADING,
 	TASK_ERROR
 } from '../_actions/types';
@@ -39,6 +40,11 @@ export default (state = initialState, { type, payload }) => {
 				tasks: state.tasks.map(task =>
 					task._id === payload._id ? payload : task
 				)
+			};
+		case CLEAR_TASKS:
+			return {
+				...state,
+				tasks: []
 			};
 		case SET_TASK_LOADING:
 			return {

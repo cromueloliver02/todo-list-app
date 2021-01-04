@@ -6,11 +6,12 @@ import TaskItem from '../tasks/TaskItem';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
-const Tasks = ({ task: { tasks, loading }, getTasks }) => {
+const Tasks = ({ user, task: { tasks, loading }, getTasks }) => {
 	useEffect(() => {
-		getTasks();
-		// eslint-disable-next-line
-	}, []);
+		if (user) {
+			getTasks();
+		}
+	}, [user, getTasks]);
 
 	if (loading && tasks.length === 0) {
 		return <Spinner />;
@@ -20,7 +21,7 @@ const Tasks = ({ task: { tasks, loading }, getTasks }) => {
 		<section className='todo-list py-3'>
 			<div className='row'>
 				<div className='col-md-6 offset-md-3'>
-					<h4>Todos</h4>
+					<h4 className='mb-4'>Todos</h4>
 					<ul className='list-group'>
 						<TransitionGroup>
 							{tasks.length === 0 ? (
@@ -52,7 +53,8 @@ Tasks.propTypes = {
 };
 
 const mapStateToProps = state => ({
-	task: state.task
+	task: state.task,
+	user: state.auth.user
 });
 
 export default connect(mapStateToProps, { getTasks })(Tasks);

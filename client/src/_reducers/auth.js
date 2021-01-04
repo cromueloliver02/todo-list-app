@@ -5,6 +5,7 @@ import {
 	AUTH_ERROR,
 	REGISTER_FAIL,
 	AUTH_FAIL,
+	LOGOUT,
 	SET_AUTH_LOADING
 } from '../_actions/types';
 
@@ -34,9 +35,10 @@ export default (state = initialState, { type, payload }) => {
 				isAuthenticated: true,
 				loading: false
 			};
-			// case AUTH_ERROR:
-			// case REGISTER_FAIL:
-			// case AUTH_FAIL:
+		case AUTH_ERROR:
+		case REGISTER_FAIL:
+		case AUTH_FAIL:
+		case LOGOUT:
 			localStorage.removeItem('token');
 			return {
 				...state,
