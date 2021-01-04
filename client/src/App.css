@@ -1,0 +1,51 @@
+.landing {
+	background-image: url('./img/background.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	height: 100vh;
+}
+
+.landing .overlay {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.landing .overlay .landing-content {
+	z-index: 1;
+}
+
+.todo-item span {
+	line-height: 0;
+}
+
+.todo-item .checkbox:checked ~ div span {
+	text-decoration: line-through;
+	color: #999;
+}
+
+.todo-item .btn-delete {
+	cursor: pointer;
+	color: blue;
+}
+
+.item-enter {
+	opacity: 0;
+}
+.item-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+.item-exit {
+	opacity: 1;
+}
+.item-exit-active {
+	opacity: 0;
+	transition: opacity 500ms ease-in;
+}

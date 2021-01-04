@@ -13,7 +13,7 @@ const auth = require('../middlewares/auth');
 // @access     Private
 router.get('/', auth, async (req, res) => {
 	try {
-		const tasks = await Task.find({ user: req.user.id });
+		const tasks = await Task.find({ user: req.user.id }).sort({ date: -1 });
 
 		res.send(tasks);
 	} catch (err) {

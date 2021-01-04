@@ -31,7 +31,7 @@ router.get('/', auth, async (req, res) => {
 router.post(
 	'/',
 	[
-		body('email', 'Please your valid email').isEmail(),
+		body('email', 'Please enter your valid email').isEmail(),
 		body(
 			'password',
 			'Please enter a password with atleast 6 characters'
