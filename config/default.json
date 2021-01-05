@@ -1,4 +1,5 @@
 {
-	"mongoURI": "mongodb://127.0.0.1:27017/todo-list-app",
+	"devMongoURI": "mongodb://127.0.0.1:27017/todo-list-app",
+	"mongoURI": "mongodb+srv://crom02:crom02@todolistapp.spmwt.mongodb.net/TodoList?retryWrites=true&w=majority",
 	"jwtSecret": "secret"
 }

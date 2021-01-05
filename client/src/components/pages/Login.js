@@ -67,8 +67,13 @@ const Login = ({ auth: { isAuthenticated, loading }, login }) => {
 										<button
 											type='submit'
 											className='btn btn-primary btn-block'
+											disabled={loading}
 										>
-											LOGIN
+											{loading ? (
+												<i class='fas fa-spinner fa-spin'></i>
+											) : (
+												<span>LOGIN</span>
+											)}
 										</button>
 										<p className='mt-4 mb-0'>
 											Not registered yet?{' '}

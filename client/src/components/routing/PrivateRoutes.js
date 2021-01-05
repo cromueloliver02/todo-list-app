@@ -12,8 +12,10 @@ const PrivateRoutes = () => {
 		<Router>
 			<Fragment>
 				<Navbar />
-				<div className='container pt-3'>
-					<Alert />
+				<div className='row pt-3'>
+					<div className='col-md-6 offset-md-3'>
+						<Alert />
+					</div>
 				</div>
 				<Switch>
 					<PrivateRoute exact path='/dashboard' component={Dashboard} />

@@ -21,6 +21,7 @@ const TaskForm = ({ setAlert, createTask }) => {
 
 	return (
 		<section className='todo-form py-4'>
+			{/* <div className='container'> */}
 			<div className='row'>
 				<div className='col-md-6 offset-md-3'>
 					<form onSubmit={onSubmit}>
@@ -43,6 +44,7 @@ const TaskForm = ({ setAlert, createTask }) => {
 						</div>
 					</form>
 				</div>
+				{/* </div> */}
 			</div>
 		</section>
 	);

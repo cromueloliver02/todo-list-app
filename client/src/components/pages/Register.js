@@ -103,8 +103,13 @@ const Register = ({
 										<button
 											type='submit'
 											className='btn btn-primary btn-block'
+											disabled={loading}
 										>
-											REGISTER
+											{loading ? (
+												<i class='fas fa-spinner fa-spin'></i>
+											) : (
+												<span>REGISTER</span>
+											)}
 										</button>
 										<p className='mt-4 mb-0'>
 											Already have account?{' '}

@@ -16,6 +16,7 @@ const Alert = ({ alerts }) => {
 		// 		</Fragment>
 		// 	)}
 		// </TransitionGroup>
+
 		<TransitionGroup>
 			{alerts.length > 0 &&
 				alerts.map((alert, idx) => (
