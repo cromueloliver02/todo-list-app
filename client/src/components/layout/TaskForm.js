@@ -21,30 +21,30 @@ const TaskForm = ({ setAlert, createTask }) => {
 
 	return (
 		<section className='todo-form py-4'>
-			{/* <div className='container'> */}
-			<div className='row'>
-				<div className='col-md-6 offset-md-3'>
-					<form onSubmit={onSubmit}>
-						<div className='form-group'>
-							<div className='input-group mb-3'>
-								<input
-									type='text'
-									className='form-control'
-									placeholder='Enter your task...'
-									name='text'
-									value={text}
-									onChange={e => setText(e.target.value)}
-								/>
-								<div className='input-group-append'>
-									<button className='btn btn-primary' type='submit'>
-										Add todo
-									</button>
+			<div className='container'>
+				<div className='row'>
+					<div className='col-md-6 offset-md-3'>
+						<form onSubmit={onSubmit}>
+							<div className='form-group'>
+								<div className='input-group mb-3'>
+									<input
+										type='text'
+										className='form-control'
+										placeholder='Enter your task...'
+										name='text'
+										value={text}
+										onChange={e => setText(e.target.value)}
+									/>
+									<div className='input-group-append'>
+										<button className='btn btn-primary' type='submit'>
+											Add todo
+										</button>
+									</div>
 								</div>
 							</div>
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
-				{/* </div> */}
 			</div>
 		</section>
 	);

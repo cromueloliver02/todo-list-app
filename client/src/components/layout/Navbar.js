@@ -13,7 +13,7 @@ const Navbar = ({ auth: { user, loading } }) => {
 
 				<button
 					className='navbar-toggler'
-					data-toggle='toggle'
+					data-toggle='collapse'
 					data-target='#navbar-menu'
 				>
 					<span className='navbar-toggler-icon'></span>

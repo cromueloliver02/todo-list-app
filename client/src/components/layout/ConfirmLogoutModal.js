@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 const ConfirmLogoutModal = ({ logout }) => {
 	return (
 		<div className='modal' id='confirmModal'>
-			<div className='modal-dialog modal-sm modal-dialog-centered'>
+			<div
+				className='modal-dialog modal-sm modal-dialog-centered'
+				style={{ width: '400px' }}
+			>
 				<div className='modal-content'>
 					<div className='modal-header bg-primary text-white'>
 						<h6 className='modal-title'>Confirm Logout</h6>

@@ -19,28 +19,30 @@ const Tasks = ({ user, task: { tasks, loading }, getTasks }) => {
 
 	return (
 		<section className='todo-list py-3'>
-			<div className='row'>
-				<div className='col-md-6 offset-md-3'>
-					<h4 className='mb-4'>Todos</h4>
-					<ul className='list-group'>
-						<TransitionGroup>
-							{tasks.length === 0 ? (
-								<CSSTransition classNames='item' timeout={500}>
-									<p className='text-muted'>No tasks now</p>
-								</CSSTransition>
-							) : (
-								tasks.map(task => (
-									<CSSTransition
-										key={task._id}
-										classNames='item'
-										timeout={500}
-									>
-										<TaskItem task={task} />
+			<div className='container'>
+				<div className='row'>
+					<div className='col-md-6 offset-md-3'>
+						<h4 className='mb-4'>Todos</h4>
+						<ul className='list-group'>
+							<TransitionGroup>
+								{tasks.length === 0 ? (
+									<CSSTransition classNames='item' timeout={500}>
+										<p className='text-muted'>No tasks now</p>
 									</CSSTransition>
-								))
-							)}
-						</TransitionGroup>
-					</ul>
+								) : (
+									tasks.map(task => (
+										<CSSTransition
+											key={task._id}
+											classNames='item'
+											timeout={500}
+										>
+											<TaskItem task={task} />
+										</CSSTransition>
+									))
+								)}
+							</TransitionGroup>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</section>
