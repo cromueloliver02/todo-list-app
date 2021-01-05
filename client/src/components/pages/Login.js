@@ -70,7 +70,7 @@ const Login = ({ auth: { isAuthenticated, loading }, login }) => {
 											disabled={loading}
 										>
 											{loading ? (
-												<i class='fas fa-spinner fa-spin'></i>
+												<i className='fas fa-spinner fa-spin'></i>
 											) : (
 												<span>LOGIN</span>
 											)}

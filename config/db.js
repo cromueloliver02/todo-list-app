@@ -8,7 +8,7 @@ const dbURI =
 
 const connectDB = async () => {
 	try {
-		await mongoose.connect(config.get('mongoURI'), {
+		await mongoose.connect(dbURI, {
 			useCreateIndex: true,
 			useNewUrlParser: true,
 			useUnifiedTopology: true,

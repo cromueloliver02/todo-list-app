@@ -106,7 +106,7 @@ const Register = ({
 											disabled={loading}
 										>
 											{loading ? (
-												<i class='fas fa-spinner fa-spin'></i>
+												<i className='fas fa-spinner fa-spin'></i>
 											) : (
 												<span>REGISTER</span>
 											)}
